@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         </Link>
         {context?.login ? (
           <Link to="/conta" className={styles.login}>
-            {context?.userName}
+            {context.data?.nome}
           </Link>
         ) : (
           <Link to="/login" className={styles.login}>
