@@ -2,9 +2,11 @@ import React from 'react'
 import useForm from '../../Hooks/useForm'
 import { UserContext } from '../../UserContext'
 import styles from './Login.module.css'
+import stylesBtn from '../Forms/Button.module.css'
 import Input from '../Forms/Input'
 import Button from '../Forms/Button'
 import Error from '../Helper/Error'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const username = useForm()
@@ -32,6 +34,14 @@ const Login = () => {
           <Button>Entrar</Button>
         )}
         <Error>{context?.error}</Error>
+
+        <div className={styles.cadastro}>
+          <h2 className={styles.subtitle}>Cadastre-se</h2>
+          <p>Ainda não possui conta? Cadastre-se no site.</p>
+          <Link className={stylesBtn.button} to="/login/criar">
+            Cadastro
+          </Link>
+        </div>
       </form>
     </section>
   )
