@@ -4,6 +4,7 @@ import { UserContext } from '../../UserContext'
 import styles from './Login.module.css'
 import Input from '../Forms/Input'
 import Button from '../Forms/Button'
+import Error from '../Helper/Error'
 
 const Login = () => {
   const username = useForm()
@@ -30,7 +31,7 @@ const Login = () => {
         ) : (
           <Button>Entrar</Button>
         )}
-        {context?.error}
+        <Error>{context?.error}</Error>
       </form>
     </section>
   )

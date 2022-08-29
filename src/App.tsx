@@ -6,9 +6,12 @@ import Header from './Components/Header'
 import Home from './Components/Home'
 import Login from './Components/Login/Login'
 import LoginLayout from './Components/Login/LoginLayout'
-import { UserStorage } from './UserContext'
+import UserLayout from './Components/User/UserLayout'
+import { UserContext, UserStorage } from './UserContext'
 
 const App: React.FC = () => {
+  const context = React.useContext(UserContext)
+
   return (
     <>
       <BrowserRouter>
@@ -21,6 +24,11 @@ const App: React.FC = () => {
               <Route path="criar" element={<div>criar</div>} />
               <Route path="perdeu" element={<div>perdeu</div>} />
               <Route path="resetar" element={<div>resetar</div>} />
+            </Route>
+            <Route path="conta" element={<UserLayout />}>
+              <Route index element={<div>feed</div>} />
+              <Route path="postar" element={<div>postar</div>} />
+              <Route path="estatisticas" element={<div>estatisticas</div>} />
             </Route>
           </Routes>
         </UserStorage>
