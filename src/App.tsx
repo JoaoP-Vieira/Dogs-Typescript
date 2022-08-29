@@ -7,6 +7,7 @@ import Home from './Components/Home'
 import Login from './Components/Login/Login'
 import LoginCreate from './Components/Login/LoginCreate'
 import LoginLayout from './Components/Login/LoginLayout'
+import LoginPasswordLost from './Components/Login/LoginPasswordLost'
 import UserLayout from './Components/User/UserLayout'
 import { UserContext, UserStorage } from './UserContext'
 
@@ -23,7 +24,7 @@ const App: React.FC = () => {
             <Route path="login" element={<LoginLayout />}>
               <Route index element={<Login />} />
               <Route path="criar" element={<LoginCreate />} />
-              <Route path="perdeu" element={<div>perdeu</div>} />
+              <Route path="perdeu" element={<LoginPasswordLost />} />
               <Route path="resetar" element={<div>resetar</div>} />
             </Route>
             <Route path="conta" element={<UserLayout />}>
